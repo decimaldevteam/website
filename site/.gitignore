@@ -1,0 +1,8 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# Developer files
+old/
+build/
+commit.js
