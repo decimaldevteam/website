@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Spotify-api.js v5 release",
+        "content": "Spotify-api.js v5 beta version has been released with oauth and client support. With the v5 beta you can access the current user and its player. And the v5 beat version will have more powerful http manager using axios and covers the 90% of spotify api endpoints. Still the version has alot of damaged stuff!",
+        "posted": "17/11/2020",
+        "author": "Scientific-Guy"
+    },
+    {
+        "title": "New Website",
+        "content": "We have renewed our website with better react site and better ui! You can make this site more good by contributing in our github repo :)",
+        "posted": "16/11/2020",
+        "author": "Scientific-Guy"
+    }
+]
