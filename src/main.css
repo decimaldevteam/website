@@ -1,0 +1,403 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%
+}
+
+body{
+    font-family: News Cycle;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: lighter;
+}
+
+::selection{
+    color: white;
+    background: #18181d;
+}
+
+body::-webkit-scrollbar { 
+    width: 0;
+} 
+
+.header{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    padding: .5rem 1rem;
+    background-color: #18181d;
+    color: white;
+    transition: 0.3s;
+    white-space: nowrap;
+    overflow-y: auto;
+}
+
+.header::-webkit-scrollbar { 
+    width: 0;
+} 
+
+@media (max-width: 480px){
+    .header{
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 1000px){
+    .infocard h1{
+        font-size: 2em!important;
+    }
+
+    .about p{
+        font-size: 1rem!important;
+    }
+}
+
+.header-content{
+    display: flex;
+    padding-right: 5px;
+}
+
+.header-logo a{
+    color: white;
+    text-decoration: none;
+    font-family: Alata;
+    font-size: 1.25rem;
+    position: relative;
+    top: 5px;
+}
+
+@media (max-width: 500px){
+    .header-logo a{
+        display: none;
+    }
+}
+
+.header-logo img{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.header-links a{
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    top: 20px;
+    padding-left: 30px;
+}
+
+.header-links a:last-child{
+    padding-right: 30px;
+}
+
+.header-links a:hover{
+    color: #61dafb;
+}
+
+.coverpage{
+    background-color: #282c34;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    margin-top: -2px;
+}
+
+.coverpage-content h2{
+    line-height: 1;
+}
+
+@keyframes coverpage-animation{
+    0%{
+        padding-top: 100px;
+        opacity: 0;
+    }
+    100%{
+        padding-top: 40px;
+        opacity: 1;
+    }
+}
+
+.coverpage-content{
+    text-align: left;
+    color: white;
+    animation-name: coverpage-animation;
+    animation-duration: 2s;
+    padding-top: 40px;
+    padding-left: 30px;
+}
+
+.coverpage-content h2{
+    font-size: 5rem;
+}
+
+@media (max-width: 780px){
+    .coverpage-content h2{
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 300px){
+    .coverpage-content h2{
+        font-size: 2rem;
+    }
+}
+
+.btn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+    user-select: none;
+    padding: .375rem .75rem;
+    border: none;
+    border-radius: .25rem;
+    line-height: 1.5;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn a{
+    color: black;
+}
+
+.coverpage-content p{
+    font-size: 15px;
+}
+
+.socialcard{
+    color: white!important;
+    padding-left: 8px;
+}
+
+.socialcard:hover{
+    opacity: 0.7;
+}
+
+.footer-content{
+    background-color: #282c34;
+    height: 100px;
+    position: relative;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+}
+
+@media (max-width: 700px){
+    .footer-content{
+        padding-top: 10px;
+    }
+}
+
+.footer-content h3{
+    font-size: 30px;
+    margin-top: -20px;
+}
+
+@media (max-width: 370px){
+    .footer-content h3{
+        font-size: 20px;
+        padding-top: 15px;
+    }
+}
+
+.infocard a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.row-handler{
+    padding: 30px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card{
+    border-radius: 3px;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.card h3{
+    font-size: 1.75rem;
+}
+
+.muted{
+    opacity: 0.7;
+}
+
+.card-holder{
+    width: 100%;
+}
+
+@media (min-width: 576px){
+    .card-holder{
+        flex: 0 0 32%;
+        max-width: 32%;
+    }
+
+    .card{
+        width: 100%;
+    }
+}
+
+.langcol{
+    border-radius: 100%;
+    width: 13px;
+    height: 13px;
+}
+
+.search-group{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 80%;
+}
+
+.search-group input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    outline: none;
+    flex: 1 1 auto;
+    display: block;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    position: relative;
+    z-index: 1;
+}
+
+.search-group a{
+    display: inline-block;
+    font-weight: 400;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    outline: none;
+    cursor: pointer;
+    margin-left: -1px;
+    position: relative;
+    z-index: 2;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.search-group a:hover{
+    color: white;
+    background-color: #dc3545;
+}
+
+.full-width{
+    max-width: 100%!important;
+    width: 100%!important;
+}
+
+.contrib-handler a{
+    padding-left: 10px;
+}
+
+.contrib-handler{
+    margin-top: 15px;
+}
+
+@media (min-width: 576px){
+    .about-img img{
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+}
+
+@media (min-width: 576px){
+    .about-para p{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.hash, .card a{
+    color: #005eff;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.hash:hover{
+    opacity: 0.7;
+}
+
+.infocard > h1{
+    font-size: 2.5rem;
+    color: darkslategrey;
+}
+
+.news .card{
+    margin-top: 20px;
+}
+
+.about img{
+    max-width: 100%;
+    height: auto;
+}
+
+.about p{
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+}
+
+@media (min-width: 1100px){
+    .about img{
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+
+    .about p{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 1100px){
+    .about p{
+        text-align: center;
+    }
+}
+
+.discord-box{
+    width: 100%;
+    padding: 15px;
+}
+
+.discord-box iframe{
+    width: 100%;
+    height: 90vh;
+}
