@@ -4,3 +4,4 @@ package-lock.json
 
 # Developer files
 old/
+build/
