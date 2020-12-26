@@ -307,16 +307,18 @@ hr:first-child{
     margin-right: 10px;
 }
 
-.heading span::after{
-    content: "#";
-    color: #7298da;
-    margin-left: 4px;
-}
-
-.heading span{
-    transition: .3s;
-    opacity: 0;
-    cursor: pointer;
+@media (min-width: 800px){
+    .heading span::after{
+        content: "#";
+        color: #7298da;
+        margin-left: 4px;
+    }
+    
+    .heading span{
+        transition: .3s;
+        opacity: 0;
+        cursor: pointer;
+    }
 }
 
 .heading span:hover{
