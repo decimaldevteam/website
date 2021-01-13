@@ -11,9 +11,7 @@ export default function Contributors(){
 
         return null;
     }
-
-    console.log(data)
-
+    
     return <>
         {data.map(x => <a href={x.url}><img src={`https://cdn.decimaldev.xyz/avatars/${x.avatar}`} alt={x.name}/></a>)}
     </>

@@ -32,8 +32,20 @@ h1, h2, h3, h4, h5, h6 {
     background: #18181d;
 }
 
-body::-webkit-scrollbar { 
-    width: 0;
+::-webkit-scrollbar {
+    width: 7px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #18181d;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #6580b1;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #7298da;
 }
 
 #app{
@@ -418,3 +430,26 @@ hr:first-child{
 .news-alt-side{
     margin-left: 10px;
 }
+
+.latest-video .heading{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.latest-video iframe{
+    width: calc(80vw - 80px);
+    height: calc(46vw - 80px);
+    margin-left: 10vw;
+    outline: none;
+    border-radius: 5px;
+}
+
+.iframe-holder{
+    width: 100%;
+}
+
+@media (max-width: 600px){
+    #yt-latest-vid{
+        display: none;
+    }
+} 

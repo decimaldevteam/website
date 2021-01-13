@@ -4,11 +4,10 @@ import React from 'react';
 export default function Header({ noHash }){
 
     return <div className="header">
-         <div className="header-content">
+        <div className="header-content">
             <div className="header-links">
                 <a href="/">Home</a>
                 <a href="/projects">Projects</a>
-                <a href="/news">News</a>
                 {
                     noHash ?
                     '' :
@@ -18,7 +17,7 @@ export default function Header({ noHash }){
                     </>
                 }
             </div>
-         </div>
+        </div>
     </div>
 
 }

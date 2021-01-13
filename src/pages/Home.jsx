@@ -2,36 +2,35 @@ import React from 'react';
 import Header from '../components/Header';
 import Project from '../components/Project';
 import Contributors from '../components/Contributors';
+import YouTube from '../components/Youtube';
 
-export default class Home extends React.Component{
+export default function Home(){
 
-    constructor(props){
-        super(props);
-        this.state = { loaded: false };
-    }
+    const [loaded, setLoadedState] = React.useState(false);
 
-    componentDidMount(){
-        setTimeout(() => {
-            document.querySelector('.load-img').style.width = '200px';
-            document.querySelector('.load-img').style.marginTop = 'calc(55vh - 200px)';
+    React.useEffect(() => {
+        window.addEventListener('load', () => {
             setTimeout(() => {
-                document.querySelector('.load-img').style.width = '150px';
-                document.querySelector('.load-img').style.marginTop = 'calc(50vh - 150px)';
-            }, 100)
-            setTimeout(() => {
-                document.querySelector('.load-img').style.opacity = 0;
-                setTimeout(() => this.setState({ loaded: true }), 200);
-            }, 500);
-        }, 1000)
-    }
+                document.querySelector('.load-img').style.width = '200px';
+                document.querySelector('.load-img').style.marginTop = 'calc(55vh - 200px)';
+                setTimeout(() => {
+                    document.querySelector('.load-img').style.width = '150px';
+                    document.querySelector('.load-img').style.marginTop = 'calc(50vh - 150px)';
+                }, 100)
+                setTimeout(() => {
+                    document.querySelector('.load-img').style.opacity = 0;
+                    setTimeout(() => setLoadedState(true), 200);
+                }, 500);
+            }, 1000)
+        });
+    }, []);
 
-    render(){
+    if(!loaded) return <img src="https://cdn.decimaldev.xyz/white-logo.svg" className="load-img" alt="Loading" draggable="false"/>
 
-        if(!this.state.loaded) return <img src="https://cdn.decimaldev.xyz/white-logo.svg" className="load-img" alt="Loading" draggable="false"/>
+    return <>
+        <Header/>
 
-        return <>
-            <Header/>
-
+        <div>
             <div className="main-content">
                 <h1>Decimal Development</h1>
                 <h3>
@@ -60,27 +59,35 @@ export default class Home extends React.Component{
 
                     <div className="contributors" id="contributors">
                         <h2 className="heading">Contributors <span onClick={() => document.getElementById('contributors').scrollIntoView()}/></h2>
-
                         <div><Contributors/></div>
                     </div>
 
                     <hr/>
 
+                    <div id="yt-latest-vid">
+                        <div className="latest-video" id="latest-video">
+                            <h2 className="heading">Latest Video <span onClick={() => document.getElementById('latest-video').scrollIntoView()}/></h2>
+                            <YouTube/>
+                        </div>
+
+                        <hr/>
+                    </div>
+
                     <div className="contact" id="contact">
                         <div style={{ textAlign: 'center', paddingTop: '30px' }}>
                             <h3>We'd love to talk</h3>
-                            <p style={{ width: '80%', textAlign: 'center', margin: 'auto' }}>If you want to contact us, you can contact us through our discord server or through twitter!. We will also provide support for new developers too. Even you can contribute to this development! We always look opportunities to do exciting projects and websites!</p>
+                            <p style={{ width: '80%', textAlign: 'center', margin: 'auto' }}>If you want to contact us, you can contact us through our discord server or through twitter!. We will also provide support for new developers too. Even you can contribute to this development! We always look opportunities to do exciting projects and websites! We now also make tutorials on youtube for beginners!</p>
                             <div className="footer-svg-row">
                                 <a href="https://github.com/decimaldevteam"><i className="fab fa-github fa-2x"/></a>
                                 <a href="https://discord.gg/FrduEZd"><i className="fab fa-discord fa-2x"/></a>
                                 <a href="https://twitter.com/devdecimal"><i className="fab fa-twitter fa-2x"/></a>
+                                <a href="https://www.youtube.com/channel/UCu6B4Z62fiCT_mwwHlc84iQ"><i className="fab fa-youtube fa-2x"/></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
-
-    }
+        </div>
+    </>
 
 }
